@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("user")
 public class UserController {
+
+
     @GetMapping("/add")
     public String displayAddUserForm(){
         return "user/add";
@@ -18,13 +20,15 @@ public class UserController {
 
     @PostMapping("")
     public String processAddUserForm(Model model, @ModelAttribute User user, String verify) {
-        if(user.getPassword().equals(verify)){
+        if (user.getPassword().equals(verify)) {
             return "user/index";
         } else {
-
-            model.addAttribute("error", "Make sure those passwordsmatch");
+            model.addAttribute("Error", "Passwords don't match BIIIIIIIITCh");
+            model.addAttribute("username",user.getUsername());
+            model.addAttribute("email",user.getEmail());
             return "user/add";
         }
+
     }
 
 
