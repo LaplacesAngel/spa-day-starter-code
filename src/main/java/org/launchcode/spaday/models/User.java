@@ -1,8 +1,13 @@
 package org.launchcode.spaday.models;
 
+import javax.validation.constraints.NotBlank;
+
 public class User {
+    @NotBlank(message = "Can't be blank yo")
     private String username;
+    @NotBlank(message = "Can't be blank yo")
     private String email;
+    @NotBlank(message = "Can't be blank yo")
     private String password;
 
     public User() {
