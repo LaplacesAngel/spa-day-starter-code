@@ -16,8 +16,10 @@
         <label>
             Email:
             <input th:field="${user.email}">
+            <p class="error" th:errors="${user.email}"></p>
         </label>
-        <p class="error" th:errors="${user.email}"></p>
+
+
 
         <label>
             Password:
@@ -27,8 +29,9 @@
 
         <label>
             Verify Password:
-            <input type = 'password' name = 'verify'>
+            <input type = 'password' th:field="${user.verifyPassword}">
         </label>
+        <p class="error" th:errors="${user.verifyPassword}"></p>
 
         <input type = 'submit' value = 'Sign Up'>
     </form>
